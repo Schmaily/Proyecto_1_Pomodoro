@@ -39,7 +39,7 @@ fun HomeScreen(navigateTo: (Destinations) -> Unit = {}) {
     val context = LocalContext.current
 
     Scaffold(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
     ) { padding ->
         Column(
             modifier = Modifier
@@ -89,7 +89,7 @@ fun HomeScreen(navigateTo: (Destinations) -> Unit = {}) {
                     icon = R.drawable.timer_icon,
                     descriptionIcon = "botón de Empezar Pomodoro",
                     onClick = {
-                        navigateTo(Destinations.Timer)
+                        navigateTo(Destinations.SetupSessionScreen)
                     },
                 )
 
@@ -99,8 +99,7 @@ fun HomeScreen(navigateTo: (Destinations) -> Unit = {}) {
                     icon = R.drawable.habit_icon,
                     descriptionIcon = "botón Ver Hábitos",
                     onClick = {
-                        Toast.makeText(context, "TODO: Ver Hábitos", Toast.LENGTH_SHORT).show()
-                    },
+                        navigateTo(Destinations.Habits)                    },
                 )
 
                 OptionButtons(
@@ -109,7 +108,7 @@ fun HomeScreen(navigateTo: (Destinations) -> Unit = {}) {
                     icon = R.drawable.checklist_icon,
                     descriptionIcon = "botón Ver Tareas",
                     onClick = {
-                        Toast.makeText(context, "TODO: Ver Tareas", Toast.LENGTH_SHORT).show()
+                        navigateTo(Destinations.Task)
                     },
                 )
             }
